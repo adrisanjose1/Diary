@@ -134,7 +134,7 @@ meButton.addEventListener('click', () => {
   if (!meModal) {
     meModal = document.createElement('div');
     meModal.className = 'me-modal';
-    meModal.innerHTML = '<div class="me-modal-card">replace with a gif of you 🎞️</div>';
+    meModal.innerHTML = '<img src="me.gif" style="width:100%;border-radius:20px;">';
     meModal.addEventListener('click', () => meModal.classList.remove('open'));
     document.body.appendChild(meModal);
   }
