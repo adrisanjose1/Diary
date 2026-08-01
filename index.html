@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Little Diary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">a diary for two</p>
+      <h1 id="couple-names">Us</h1>
+      <p class="tagline" id="tagline">every date, every ordinary Tuesday, kept somewhere safe.</p>
+      <div class="scroll-cue" aria-hidden="true">
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="timeline-wrap">
+      <div class="thread" aria-hidden="true"></div>
+      <div id="timeline" class="timeline">
+        <!-- entries injected here -->
+      </div>
+    </section>
+
+    <section class="empty-state" id="empty-state" hidden>
+      <p>No entries yet.</p>
+      <p class="empty-sub">Open <code>entries.json</code> and write the first one.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>kept privately, for just us two — anyone else is only ever visiting</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
