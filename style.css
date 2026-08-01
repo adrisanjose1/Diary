@@ -87,7 +87,20 @@ p { margin: 0; }
 /* section 3: distance */
 .distance-bar { width: min(300px, 85vw); height: 6px; background: var(--lilac-pale); border-radius: 999px; position: relative; margin: 2.5rem 0; }
 .distance-fill-track { position: absolute; top: -22px; left: 0; width: 100%; }
-.distance-sprite { position: absolute; top: -14px; left: 0; font-size: 1.6rem; transition: left 0.1s linear; }
+.distance-sprite {
+  position: absolute; top: -24px; left: 0;
+  width: 64px; height: 60px;
+  background-image: url('bear-sprite.png');
+  background-repeat: no-repeat;
+  background-size: 256px 121px;
+  background-position-y: 0;
+  animation: bearWalk 0.7s steps(4) infinite;
+  transition: left 0.1s linear;
+}
+@keyframes bearWalk {
+  from { background-position-x: 0; }
+  to { background-position-x: -256px; }
+}
 .distance-flags { display: flex; justify-content: space-between; width: min(300px, 85vw); font-size: 1.6rem; }
 .hold-hint { margin-top: 1.5rem; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.06em; color: var(--muted); text-transform: uppercase; transition: opacity 0.4s; }
 .hold-hint.hide { opacity: 0.25; }
@@ -132,3 +145,7 @@ p { margin: 0; }
 
 /* section 7: start over */
 .start-over-btn { margin-top: 1.5rem; padding: 0.9rem 2rem; border-radius: 999px; border: none; background: var(--heart); color: #fff; font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; box-shadow: 0 15px 30px -10px rgba(217,90,134,0.5); }
+
+.carousel-dots { display: flex; gap: 6px; justify-content: center; margin-top: 1rem; }
+.carousel-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--lilac-pale); transition: background 0.25s ease, transform 0.25s ease; }
+.carousel-dot.active { background: var(--heart); transform: scale(1.4); }

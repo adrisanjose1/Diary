@@ -182,3 +182,18 @@ document.getElementById('startOverBtn').addEventListener('click', () => {
   lockScreen.classList.remove('hidden');
   setLockFill(0);
 });
+
+const carouselTrack = document.getElementById('carouselTrack');
+const carouselDots = document.getElementById('carouselDots');
+if (carouselTrack && carouselDots) {
+  const slideCount = carouselTrack.children.length;
+  for (let i = 0; i < slideCount; i++) {
+    const dot = document.createElement('span');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    carouselDots.appendChild(dot);
+  }
+  carouselTrack.addEventListener('scroll', () => {
+    const index = Math.round(carouselTrack.scrollLeft / carouselTrack.clientWidth);
+    [...carouselDots.children].forEach((dot, i) => dot.classList.toggle('active', i === index));
+  });
+}
